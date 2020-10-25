@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "A scatterplot showing weight and height of participants.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
+  },
+  "transform": [{"filter": "datum.height > 0"}, {"filter": "datum.weight > 0"}],
+  "selection": {
+    "gender_highlight": {
+      "type": "multi",
+      "fields": ["Gender"],
+      "bind": "legend"
+    }
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "weight",
+      "type": "quantitative",
+      "title": "Weight (kg)",
+      "scale": {"type": "linear", "domain": [20, 180]}
+    },
+    "y": {
+      "field": "height",
+      "type": "quantitative",
+      "title": "Height (m)",
+      "scale": {"type": "linear", "domain": [1.2, 2.3]}
+    },
+    "color": {
+      "field": "Gender",
+      "type": "nominal",
+      "scale": {"domain": ["male", "female"], "range": ["#08519c", "#c51b8a"]}
+    },
+    "opacity": {
+      "condition": {"selection": "gender_highlight", "value": 0.6},
+      "value": 0.2
+    },
+    "tooltip": [
+      {"field": "name", "type": "nominal"},
+      {"field": "weight", "type": "quantitative", "format": ","},
+      {"field": "height", "type": "quantitative", "format": ","},
+      {"field": "Country", "type": "nominal"}
+    ]
+  },
+  "config": {}
+}
