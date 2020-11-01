@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 300,
+  "background": "transparent",
+  "title": "Gender distrbution of participants",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "count", "field": "Gender", "as": "total_gender"}],
+      "groupby": ["Gender"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {"field": "total_gender", "type": "quantitative"},
+        "color": {
+          "field": "Gender",
+          "type": "nominal",
+          "scale": {
+            "domain": ["male", "female"],
+            "range": ["#6baed6", "#fa9fb5"]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "total_gender",
+            "type": "quantitative",
+            "title": "Participants",
+            "format": ","
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -60,
+        "fontSize": 18,
+        "fontStyle": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "total_gender",
+          "type": "quantitative",
+          "format": ","
+        },
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {"test": " datum['total_gender'] == 6179 ", "value": 1},
+          "value": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": 95,
+        "fontSize": 18,
+        "fontStyle": "bold"
+      },
+      "encoding": {
+        "text": {
+          "field": "total_gender",
+          "type": "quantitative",
+          "format": ","
+        },
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {"test": "datum['total_gender'] == 5052"},
+          "value": 0
+        }
+      }
+    }
+  ],
+  "view": {"stroke": null},
+  "config": {}
+}
