@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 500,
+  "width": 550,
   "height": 400,
   "background": "transparent",
   "title": "Weight and height of participants",
@@ -85,7 +85,7 @@
         "type": "text",
         "align": "right",
         "baseline": "line-top",
-        "dx": -60,
+        "dx": -70,
         "dy": 185,
         "fontSize": 11.5,
         "fontStyle": "italic"
@@ -99,26 +99,7 @@
         }
       }
     },
-    {
-      "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "middle",
-        "dx": -200,
-        "dy": 170,
-        "fontSize": 11.5,
-        "fontStyle": "italic"
-      },
-      "encoding": {
-        "text": {"field": "name", "type": "nominal"},
-        "color": {"value": "black"},
-        "opacity": {
-          "condition": {"test": "datum['weight'] == 31", "value": 1},
-          "value": 0
-        }
-      }
-    },
-    {
+      {
       "mark": {
         "type": "text",
         "align": "right",
