@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Gold medal won by Top 10 Country",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "sum", "field": "gold", "as": "total_gold"}],
+      "groupby": ["Country"]
+    },
+    {"filter": "datum.total_gold >= 17"}
+  ],
+  "mark": {"type": "bar", "cornerRadiusEnd": 10},
+  "encoding": {
+    "x": {
+      "field": "total_gold",
+      "title": "Number of Medals",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Country",
+      "sort": {"op": "sum", "field": "total_gold", "order": "descending"}
+    },
+    "color": {"value": "#fec44f"}
+  },
+  "config": {}
+}
