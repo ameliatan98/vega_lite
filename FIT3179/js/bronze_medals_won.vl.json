@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "Bronze medal won by Top 10 Country",
-  "width": 500,
+  "width": 400,
   "height": 400,
   "data": {
     "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
