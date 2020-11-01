@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 600,
+  "width": 550,
   "height": 400,
   "background": "transparent",
   "title": "Weight and height of participants",
@@ -85,7 +85,7 @@
         "type": "text",
         "align": "right",
         "baseline": "line-top",
-        "dx": -80,
+        "dx": -60,
         "dy": 185,
         "fontSize": 11.5,
         "fontStyle": "italic"
@@ -104,7 +104,7 @@
         "type": "text",
         "align": "right",
         "baseline": "middle",
-        "dx": -220,
+        "dx": -200,
         "dy": 170,
         "fontSize": 11.5,
         "fontStyle": "italic"
