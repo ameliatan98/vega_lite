@@ -1,0 +1,66 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "2016 Rio Olympics Participation by Sports",
+  "background": "transparent",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
+  },
+  "params": [
+    {
+      "name": "select_count",
+      "value": 70,
+      "bind": {
+        "input": "range",
+        "min": 70,
+        "max": 1500,
+        "step": 10,
+        "name": "Number of Participants: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "aggregate": [{"op": "count", "field": "name", "as": "count_name"}],
+      "groupby": ["sport"]
+    },
+    {"filter": "datum.count_name > select_count"}
+  ],
+  "layer": [
+    {
+      "selection": {
+        "gender_highlight": {
+          "type": "multi",
+          "fields": ["Gender"],
+          "bind": "legend"
+        }
+      },
+      "mark": {"type": "bar", "cornerRadiusEnd": 10},
+      "encoding": {
+        "y": {
+          "field": "sport",
+          "title": "Type of Sport",
+          "type": "nominal",
+          "sort": {"op": "sum", "field": "count_name", "order": "descending"}
+        },
+        "x": {
+          "field": "count_name",
+          "title": "Number of Participants",
+          "type": "quantitative"
+        },
+        "color": {"value": "#78c679"},
+        "tooltip": [
+          {"field": "sport", "type": "nominal", "title": "Sport"},
+          {
+            "field": "count_name",
+            "type": "quantitative",
+            "title": "Number of  Participants",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
