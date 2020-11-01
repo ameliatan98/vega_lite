@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 580,
+  "width": 600,
   "height": 300,
   "background": "transparent",
   "title": "Gender distrbution of participants",
