@@ -49,7 +49,7 @@
           "title": "Number of Participants",
           "type": "quantitative"
         },
-        "color": {"value": "#78c679"},
+        "color": {"value": "#41b6c4"},
         "tooltip": [
           {"field": "sport", "type": "nominal", "title": "Sport"},
           {
