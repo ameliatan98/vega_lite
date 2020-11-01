@@ -2,8 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "title": "2016 Rio Olympics Participation by Sports",
   "background": "transparent",
-  "width": 500,
-  "height": 300,
+  "width": 600,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
   },
