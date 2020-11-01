@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "2016 Rio Olympics Participation by Sports",
+  "title": "2016 Rio Olympics Participation by Events",
   "background": "transparent",
   "width": 600,
   "height": 500,
@@ -40,7 +40,7 @@
       "encoding": {
         "y": {
           "field": "sport",
-          "title": "Type of Sport",
+          "title": "Type of Event",
           "type": "nominal",
           "sort": {"op": "sum", "field": "count_name", "order": "descending"}
         },
@@ -51,7 +51,7 @@
         },
         "color": {"value": "#41b6c4"},
         "tooltip": [
-          {"field": "sport", "type": "nominal", "title": "Sport"},
+          {"field": "sport", "type": "nominal", "title": "Event"},
           {
             "field": "count_name",
             "type": "quantitative",
