@@ -23,7 +23,7 @@
           "type": "nominal",
           "scale": {
             "domain": ["male", "female"],
-            "range": ["#6baed6", "#fa9fb5"]
+            "range": ["#253494", "#7fcdbb"]
           }
         },
         "tooltip": [
