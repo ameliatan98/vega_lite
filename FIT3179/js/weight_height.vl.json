@@ -57,7 +57,8 @@
             "format": ",",
             "title": "Height"
           },
-          {"field": "Country", "type": "nominal"}
+          {"field": "Country", "type": "nominal"},
+          {"field": "sport", "type": "nominal","title": "Sport"}
         ]
       }
     },
