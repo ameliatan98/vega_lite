@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Silver medal won by Top 10 Country",
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/ameliatan98/vega_lite/main/FIT3179/data/Athletes%20Data.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [{"op": "sum", "field": "silver", "as": "total_silver"}],
+      "groupby": ["Country"]
+    },
+    {"filter": "datum.total_silver >= 25"}
+  ],
+  "mark": {"type": "bar", "cornerRadiusEnd": 10},
+  "encoding": {
+    "x": {
+      "field": "total_silver",
+      "title": "Number of Medals",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Country",
+      "sort": {"op": "sum", "field": "total_silver", "order": "descending"}
+    },
+    "color": {"value": "#969696"}
+  },
+  "config": {}
+}
